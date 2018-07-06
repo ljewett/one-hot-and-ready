@@ -2,7 +2,7 @@
 
 This kata will test your knowledge of core concepts in machine learning systems and your ability to provide craftsmanship in a cognitively challenging problem space. 100% accuracy is not as important as your process and being able to speak to the solution you've provided.
 
-Please provide both the the items listed in the deliverables section, as well as responses to the questions at the end of the Readme (Yes, there are essay questions).
+Please provide both the the items listed in the deliverables section, as well as responses to the questions at the end of the Readme.
 
 # Instructions
 
@@ -45,3 +45,7 @@ How did you select the hyperparameters your model utilizes?
 How did you address the problem with asymmetric data?
 
 If we were moving your solution to production today (into the space shuttle!), what would you be concerned about?
+
+# Attribution
+
+Original shuttle data set provided by https://archive.ics.uci.edu/ml/datasets/Statlog+%28Shuttle%29
