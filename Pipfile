@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+xgboost = "*"
+jupyter = "*"
+sklearn = "*"
+argparse = "*"
+pytest = "*"
+pytest-sugar = "*"
+configparser = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
