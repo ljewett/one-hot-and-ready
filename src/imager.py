@@ -11,7 +11,9 @@ class Imager():
             output[int(t[0]), int(t[1])] += 1
 
         plt.imshow(output[1:,1:], extent=[1, 7, 7, 1], norm=PowerNorm(gamma=1./4.), interpolation='nearest')
-        plt.savefig('heatmap.png')
+        plt.xlabel('Actual')
+        plt.ylabel('Prediction')
+        plt.savefig('images/heatmap.png')
 
     @staticmethod
     def generate_tree_image(model, tree_num):
