@@ -23,7 +23,7 @@ def test_load_config_has_necessary_items():
 def test_get_xgbparameters_correctly_casts_items_to_numbers():
     params = ConfigManager.get_xgbparameters()
     for k, v in params.items():
-        if k == 'objective':
+        if k == 'objective' or k == 'eval_metric':
             assert isinstance(v, str)
         elif k == 'eta':
             assert isinstance(v, float)

@@ -35,3 +35,19 @@ def test_get_data_able_to_load_training_data():
     data = data_manager.get_test_data()
 
     assert data.shape[1] == 10
+
+
+def test_split_data():
+    data_manager = DataManager(ConfigManager.load_config())
+    data = data_manager.get_test_data()
+
+    x_train, x_test, y_train, y_test = data_manager.split_data(data)
+    assert x_train.shape[0] == y_train.shape[0]
+    assert x_test.shape[0] == y_test.shape[0]
+
+
+def test_get_data_able_to_load_testing_data():
+    data_manager = DataManager(ConfigManager.load_config())
+    data = data_manager.get_validation_data()
+
+    assert data.shape[1] == 10

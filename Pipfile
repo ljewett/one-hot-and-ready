@@ -11,6 +11,8 @@ argparse = "*"
 pytest = "*"
 pytest-sugar = "*"
 configparser = "*"
+graphviz = "*"
+matplotlib = "*"
 
 [dev-packages]
 

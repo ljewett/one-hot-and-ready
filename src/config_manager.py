@@ -16,6 +16,6 @@ class ConfigManager:
         for k, v in params.items():
             if k == 'eta':
                 params[k] = float(v)
-            elif k != 'objective':
+            elif k != 'objective' and k != 'eval_metric':
                 params[k] = int(v)
         return params

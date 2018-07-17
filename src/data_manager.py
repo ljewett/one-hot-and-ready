@@ -39,4 +39,5 @@ class DataManager:
         test_size = self.config.getfloat('hyperparameters', 'test_size')
         random_state = self.config.getint('hyperparameters', 'random_state')
 
+        # x_train, x_test, y_train, y_test
         return train_test_split(x, y, test_size=test_size, random_state=random_state)

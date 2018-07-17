@@ -4,6 +4,7 @@ import xgboost as xgb
 from src.config_manager import ConfigManager
 from src.consts import Mode, StateMapper
 from src.data_manager import DataManager
+from src.imager import Imager
 from src.model_manager import ModelManager
 
 
@@ -23,16 +24,6 @@ class RadiatorStateController:
             Mode.VALIDATE: self.validate_model,
             Mode.PREDICT: self.predict_state,
         }.get(mode)(model)
-
-    def generate_heatmap(self, prediction, label):
-        output = np.zeros((8, 8), dtype=int)
-        for t in zip(prediction, label):
-            output[int(t[0]), int(t[1])] += 1
-        for i, row in enumerate(output[1:], 1):
-            print(i, end=' ')
-            for j in row[1:]:
-                print(str(j) + "\t", end='')
-            print('\n')
 
     def train_model(self, _):
         params = ConfigManager.get_xgbparameters()
@@ -67,7 +58,9 @@ class RadiatorStateController:
 
         prediction = model.predict(d_matrix)
 
-        self.generate_heatmap(prediction, label)
+        Imager.generate_heatmap(prediction, label)
+
+
         error_rate = np.sum(prediction != label) / label.shape[0]
         print('Error rate after training session is: {}'.format(error_rate))
 
