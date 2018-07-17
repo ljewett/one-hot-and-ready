@@ -58,8 +58,10 @@ class RadiatorStateController:
 
         prediction = model.predict(d_matrix)
 
-        Imager.generate_heatmap(prediction, label)
-
+        if self.args.generate_images:
+            Imager.generate_heatmap(prediction, label)
+            for i in range(1, 6):
+                Imager.generate_tree_image(model, i)
 
         error_rate = np.sum(prediction != label) / label.shape[0]
         print('Error rate after training session is: {}'.format(error_rate))

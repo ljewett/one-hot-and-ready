@@ -13,6 +13,8 @@ def get_args():
 
     parser.add_argument('-d', '--data', type=float, nargs=9, required=False)
 
+    parser.add_argument('-i', '--generate-images', action='store_true')
+
     return parser.parse_args()
 
 if __name__ == '__main__':
